@@ -78,7 +78,7 @@ jobs:
           tar czvf llvm-cbe.tar.gz build/
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@4
+        uses: actions/upload-artifact@v4
         with:
           name: LLVM-CBE
           path: "llvm-cbe.tar.gz"
