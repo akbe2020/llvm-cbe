@@ -73,6 +73,16 @@ jobs:
           gcc --version
           pytest -n 16
 
+      - name: Compress
+        run: |
+          tar czvf llvm-cbe.tar.gz build/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@4
+        with:
+          name: LLVM-CBE
+          path: "llvm-cbe.tar.gz"
+
   # The llvm-dev package doesn't exist for Windows, so we need to build LLVM ourselves.
   build-windows:
     runs-on: windows-latest
